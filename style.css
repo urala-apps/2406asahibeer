@@ -4,7 +4,7 @@
 
 /* ボタン色設定 */
 :root {
-  --bg: url("2406_vote_bg2.png");
+  --bg: url("2406_vote_bg.png");
   --arrow: url("2406_vote_arrow.png");
   --btnLeft:url("2406_vote_btn_left.png");
   --btnRight:url("2406_vote_btn_right.png");
