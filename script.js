@@ -24,18 +24,18 @@ looker　一覧作成
 */
 
 ////////////////////////////////////////////////////////////
-const shopName = "ウララ2405";
-const menu_left = "ライス";
-const menu_right = "ルー";
+const shopName = "2406アサヒビール";
+const menu_left = "ドライゼロ";
+const menu_right = "ゼロ";
 
-const menu_pic_left = "2405_vote_menu_left.png";
-const menu_pic_right = "2405_vote_menu_right.png";
+const menu_pic_left = "2406_vote_menu_left.png";
+const menu_pic_right = "2406_vote_menu_right.png";
 
-const btn_left = "2405_vote_btn_left.png";
-const btn_right = "2405_vote_btn_right.png";
+const btn_left = "2406_vote_btn_left.png";
+const btn_right = "2406_vote_btn_right.png";
 
-const _liffId = "2003940861-5rXMNq7b";
-const GASUrl = "https://script.google.com/macros/s/AKfycbxR7XsDeOEH6EjG7DDHK_i0tvDHiaDnrjcqMZ3eT6yUmkTqyvdfZL8UZkFZwmS7EVJNww/exec";
+const _liffId = "2003940861-NXmqLOxw";
+const GASUrl = "https://script.google.com/macros/s/AKfycbxFf3OcrhzWzpLwTd0t6uSxTvEvDBeONNUXobwHqBV_sGiTDhEI7iMq1MZSC4H6ISpy/exec";
 ////////////////////////////////////////////////////////////
 
 liff.init({
