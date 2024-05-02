@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>日々ウララ投票</title>
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css"> -->
   <link rel="stylesheet" href="./style.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-64SVN9NWL2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-64SVN9NWL2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-64SVN9NWL2');
-</script>
+    gtag('config', 'G-64SVN9NWL2');
+  </script>
 
-  <body>
+<body>
   <div class="headImg"></div>
   <div class="image"></div>
   <div class="container">
     <form id="area-items">
       <div class="area-flex">
-        <ul class="btn-items"></ul>
+        <ul class="btn-items">
+          <!-- <li class="inner"><label>
+              <div class="flexItem flexItemTop">
+                <img class="flexItem_left" src="2406_vote_menu_left.png">
+              </div>
+              <div class="flexItem flexItemBottom">
+                <button id="btn_id_left" type="submit" name="voteLeft">
+                  <img class="flexItem_left" src="2406_vote_btn_left.png">
+                </button>
+              </div>
+            </label>
+          </li> -->
+        </ul>
       </div>
     </form>
   </div>
@@ -37,4 +50,5 @@
 
   <script src="./script.js"></script>
 </body>
+
 </html>
