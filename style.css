@@ -73,7 +73,7 @@ body {
   align-items: flex-end;
 
 /*   opacity: 0.9; */
-  z-index: 99;
+/*   z-index: 99; */
 }
 
 .area-flex {
@@ -114,6 +114,7 @@ li {
   line-height: 0;
   overflow: visible;
   cursor: pointer;
+  z-index: 90;
 }
 
 /*左側ボタン*/
