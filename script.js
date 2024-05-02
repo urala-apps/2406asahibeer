@@ -59,8 +59,8 @@ liff.ready.then(() => {
   $('ul').append('<input type="submit" class="hide">');
 
 
-  $('.btn-items').append('<li class="inner"><label><div class="flexItem"><img class="flexItem_left btn_animate03" src="' + menu_pic_left + '"></div><div class="flexItem"><button id="btn_id_left" type="submit" name="voteLeft"><img class="flexItem_left btn_animate00" src="' + btn_left + '"></button></div></label></li>');
-  $('.btn-items').append('<li class="inner"><label><div class="flexItem"><img class="flexItem_left btn_animate03" src="' + menu_pic_right + '"></div><div class="flexItem"><button id="btn_id_right" type="submit" name="voteRight"><img class="flexItem_left btn_animate00" src="' + btn_right + '"></button></div></label></li>');
+  $('.btn-items').append('<li class="inner"><label><div class="flexItem flexItemTop"><img class="flexItem_left btn_animate03" src="'+ menu_pic_left +'"></div><div class="flexItem flexItemBottom"><button id="btn_id_left" type="submit" name="voteLeft"><img class="flexItem_left btn_animate00" src="'+ btn_left +'"></button></div></label></li>');
+  $('.btn-items').append('<li class="inner"><label><div class="flexItem flexItemTop"><img class="flexItem_left btn_animate03" src="'+ menu_pic_right +'"></div><div class="flexItem flexItemBottom"><button id="btn_id_right" type="submit" name="voteRight"><img class="flexItem_left btn_animate00" src="'+ btn_right +'"></button></div></label></li>');
 
 });
 
