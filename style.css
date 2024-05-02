@@ -57,7 +57,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   /* background:no-repeat; */
-  z-index: 90;
+  /* z-index: 90; */
 }
 
 /*メニューをページ下部に固定*/
@@ -114,7 +114,6 @@ li {
   line-height: 0;
   overflow: visible;
   cursor: pointer;
-  z-index: 90;
 }
 
 /*左側ボタン*/
@@ -317,6 +316,7 @@ button {
   /* margin-top: 40%; */
   object-fit: cover;
   position: relative;
+  
 }
 
 .flexItem_left {
@@ -336,5 +336,18 @@ button {
 .inner {
   display: flex;
   flex-direction: column;
+  position: relative;
 
+}
+.flexItemTop ,.flexItemBottom {
+  position: relative;
+}
+
+.flexItemTop {
+  margin-bottom:-15px;
+  z-index: 100;
+}
+
+.flexItemBottom {
+  z-index: 0;
 }
