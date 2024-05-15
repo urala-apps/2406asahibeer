@@ -65,8 +65,8 @@ $('.btn-items').append('<li class="inner"><label><div class="flexItem flexItemTo
 });
 
 
-// $('.btn-items').append('<li class="inner"><label><div class="flexItem flexItemTop"><img class="flexItem_left btn_animate03" src="'+ menu_pic_left +'"></div><div class="flexItem flexItemBottom"><button id="btn_id_left" type="submit" name="voteLeft"><img class="flexItem_left btn_animate00" src="'+ btn_left +'"></button></div></label></li>');
-// $('.btn-items').append('<li class="inner"><label><div class="flexItem flexItemTop"><img class="flexItem_left btn_animate03" src="'+ menu_pic_right +'"></div><div class="flexItem flexItemBottom"><button id="btn_id_right" type="submit" name="voteRight"><img class="flexItem_left btn_animate00" src="'+ btn_right +'"></button></div></label></li>');
+// $('.btn-items').append('<li class="inner"><label><div class="flexItem flexItemTop"><img class="flexItem_left btn_animate03" src="' + menu_pic_left + '"></div><div class="flexItem flexItemBottom"><button id="btn_id_left" type="submit" name="voteLeft"><img class="flexItem_left btn_animate00" src="' + btn_left + '"></button></div></label></li>');
+// $('.btn-items').append('<li class="inner"><label><div class="flexItem flexItemTop"><img class="flexItem_left btn_animate03" src="' + menu_pic_right + '"></div><div class="flexItem flexItemBottom"><button id="btn_id_right" type="submit" name="voteRight"><img class="flexItem_left btn_animate00" src="' + btn_right + '"></button></div></label></li>');
 
 // document.getElementById("btn_id_left").innerHTML = menu_left + "に<br>投票する";
 // document.getElementById("btn_id_right").innerHTML = menu_right + "に<br>投票する";
@@ -94,16 +94,58 @@ $('form').submit(function (event) {
   data.push({ name: 'menu', value: voteText });
   data.push({ name: 'shop', value: shopName });
 
-  // GASへ送信
-  $.post(GASUrl, data);
 
-  // alert("投票しました！");
+
+  // alertを表示させる("投票しました！");
   Swal.fire({
     title: "投票完了！",
-    text: "アサヒ " + voteText + "\nに投票しました。",
+    text: voteText + "に投票しました。",
     icon: "success"
+
+  }).then((result) => {
+    Swal.fire({
+      title: '選んだ理由は？'
+      , input: 'text'
+      , showCancelButton: true
+      , confirmButtonText: '実行'
+      , showLoaderOnConfirm: true
+      , preConfirm: function (inputStr) {
+        console.log('preConfirm起動');
+
+        //バリデーションを入れたりしても良い
+        // if (inputStr !== 'aaa') {
+        //   return Swal.showValidationMessage('aaaを入力してね');
+        // }
+
+        //ローディングを表示させるために3秒スリープ
+        var sleep = function (sec) {
+          return new Promise(resolve => {
+            setTimeout(resolve, sec * 1000);
+          });
+        };
+        return sleep(2);
+
+      }
+      , allowOutsideClick: function () {
+        return !Swal.isLoading();
+      }
+    }).then(function (result) {
+      console.log(result);
+
+      if (result.value) {
+        data.push({ name: 'comment', value: result.value });
+
+        Swal.fire({
+          title: 'ありがとうございました！'
+          , text: '投票理由:' + result.value
+        });
+      }
+    });
+
   });
 
+  // GASへ送信
+  $.post(GASUrl, data);
   // 投票したら、LINEのメッセージを送信する
 
 
