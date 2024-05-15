@@ -99,15 +99,16 @@ $('form').submit(function (event) {
   // alertを表示させる("投票しました！");
   Swal.fire({
     title: "投票完了！",
-    text: voteText + "に投票しました。",
+    text: "「アサヒ " + voteText + "」 に投票しました。",
     icon: "success"
 
   }).then((result) => {
     Swal.fire({
-      title: '選んだ理由は？'
+      title: "アンケートに回答すると\n当選確率UP!!"
+      , text: "「アサヒ " + voteText + '」 を選んだ理由を教えてください！'
       , input: 'text'
       , showCancelButton: true
-      , confirmButtonText: '実行'
+      , confirmButtonText: 'OK'
       , showLoaderOnConfirm: true
       , preConfirm: function (inputStr) {
         console.log('preConfirm起動');
@@ -131,21 +132,22 @@ $('form').submit(function (event) {
       }
     }).then(function (result) {
       console.log(result);
+      data.push({ name: 'comment', value: result.value });
+      // GASへ送信
+      $.post(GASUrl, data);
 
       if (result.value) {
-        data.push({ name: 'comment', value: result.value });
 
         Swal.fire({
-          title: 'ありがとうございました！'
-          , text: '投票理由:' + result.value
+          title: 'ご協力ありがとうございました！'
+          , text: '投票理由: ' + result.value
         });
       }
     });
 
   });
 
-  // GASへ送信
-  $.post(GASUrl, data);
+
   // 投票したら、LINEのメッセージを送信する
 
 
