@@ -352,7 +352,7 @@ button {
   z-index: 0;
 }
 
-@media (max-height :500px) {
+@media screen and (max-height :500px) {
   .flexItemTop{
     height: 70%;
   }
