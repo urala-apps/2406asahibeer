@@ -354,6 +354,7 @@ button {
 
 @media screen and (max-height :500px) {
   .flexItemTop{
-    height: 70%;
+     width: 70%;
+    margin: auto;
   }
 }
